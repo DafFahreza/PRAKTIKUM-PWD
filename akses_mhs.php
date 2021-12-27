@@ -1,5 +1,16 @@
+<form action="" method="get">
+    <label>Cari : </label>
+    <input type="text" name="cari">
+    <input type="submit" value="Cari">
+</form>
+
 <?php
-$url = "http://localhost/pwd10/getdatamhs.php";
+if (isset($_get['cari'])) {
+    $cari = $_get['cari'];
+    echo "<b>Hasil pencarian : " . $cari . "</b>";
+}
+
+$url = "http://localhost/PWD10Post/getdatamhs.php";
 $client = curl_init($url);
 curl_setopt($client, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($client);
